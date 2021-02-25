@@ -32,7 +32,7 @@ exports.mostrarCliente = async (req, res, next) => {
 
     if(!cliente) {
         res.json({mensaje: 'Cliente no existe'})
-        next()
+        return next()
     }
 
     //mostrar cliente

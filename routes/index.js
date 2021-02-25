@@ -3,6 +3,8 @@ const router = express.Router();
 
 const clienteController = require('../controllers/clienteController')
 
+const productosController = require('../controllers/productosController')
+
 module.exports = function() {
 
     //Agrega nuevos clientes vía POST
@@ -19,6 +21,13 @@ module.exports = function() {
 
     //Eliminar cliente
     router.delete('/clientes/:idCliente', clienteController.eliminarCliente)
+
+    //*** PRODUCTOS **** */
+    //nuevos productos
+    router.post('/productos', 
+        productosController.subirArchivo,
+        productosController.nuevoProducto
+    );
 
     return router
 }
